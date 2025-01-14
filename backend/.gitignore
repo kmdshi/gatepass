@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+
+# IDE settings 
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# FastAPI
+*.env
+*.env.*
+.env/*
