@@ -18,12 +18,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
-def init_db():
-    try:
-        Base.metadata.create_all(bind=engine)
-        print("Database tables created successfully.")
-    except OperationalError as e:
-        print(f"Error connecting to the database: {e}")
 
 
-init_db()
