@@ -1,21 +1,22 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import List, Optional, Union
 
 
 class PersonBase(BaseModel):
     first_name: str
     last_name: str
-    email: str
-    password_hash: str
-    organization_id: Optional[int]
+    email: EmailStr
 
+    class Config:
+        from_attributes = True
 
 class PersonCreate(PersonBase):
-    pass
+    password: str
 
 
 class Person(PersonBase):
     id: int
+    organization_id: Optional[int]
 
     class Config:
         from_attributes = True
